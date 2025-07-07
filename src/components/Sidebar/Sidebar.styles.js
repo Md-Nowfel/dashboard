@@ -18,12 +18,22 @@ export const NavLinkItem = styled.a`
   display: flex;
   gap: 10px;
   align-items: center;
-  padding-bottom: 30px;
+  margin-bottom: 10px;
   color: var(--color-mutedText);
   font-size: var(--font-size-medium);
   cursor: pointer;
+  padding: 14px 18px;
+  width: 200px;
+  text-decoration: none;
 
   &:hover {
     color: var(--color-dark);
+  }
+
+  &.active {
+    color: var(--color-dark);
+    background-color: var(--color-light);
+    border-radius: 10px;
+    
   }
 `;

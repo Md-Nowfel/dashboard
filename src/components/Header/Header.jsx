@@ -17,7 +17,7 @@ import IconButton from "../IconButton/IconButton";
 import { Bell, MessageSquare, Search, Menu } from "react-feather";
 import ModalSideBar from "../ModalSidebar/ModalSidebar";
 
-function Header() {
+function Header({ title = "Dashboard" }) {
   const [isModalOpen, setIsModalOpen] = useState(false);
 
   function handleOpenModal() {
@@ -35,7 +35,7 @@ function Header() {
             <Menu />
           </IconButton>
         </MobileSearchBar>
-        <Title>DashBoard</Title>
+        <Title>{title}</Title>
       </LeftSection>
       <RightSection>
         <LaptopSearchField>
