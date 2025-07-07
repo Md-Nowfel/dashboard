@@ -11,12 +11,12 @@ import { ShoppingBag } from "react-feather";
 import { NavLink } from "react-router-dom";
 
 
-function Sidebar() {
-  
+function Sidebar({ handleOpenModal, type }) {
+  // You can use handleOpenModal for mobile menu button if needed
   return (
-    <SidebarContainer>
+    <SidebarContainer type={type}>
       <Logo src={logo} />
-      <NavLinkContainer>
+      <NavLinkContainer >
         <NavLinkItem as={NavLink} to="/dashboard">
           <Grid />
           Dashboard 

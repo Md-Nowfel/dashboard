@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React from "react";
 import {
   HeaderContainer,
   Title,
@@ -15,20 +15,13 @@ import SearchField from "../SearchField/SearchField";
 import Button from "../Button/Button";
 import IconButton from "../IconButton/IconButton";
 import { Bell, MessageSquare, Search, Menu } from "react-feather";
-import ModalSideBar from "../ModalSidebar/ModalSidebar";
 
-function Header({ title = "Dashboard" }) {
-  const [isModalOpen, setIsModalOpen] = useState(false);
-
-  function handleOpenModal() {
-    setIsModalOpen(!isModalOpen);
-  }
-
+function Header({ title = "Dashboard", handleOpenModal }) {
   return (
     <HeaderContainer>
       <LeftSection>
         <MobileSearchBar>
-          <IconButton type="picture">
+          <IconButton type="picture" >
             <img src={logo} alt="Logo" />
           </IconButton>
           <IconButton type="icon" onClick={handleOpenModal}>
@@ -61,10 +54,6 @@ function Header({ title = "Dashboard" }) {
           <img src={user} alt="User" />
         </IconButton>
       </RightSection>
-      <ModalSideBar
-        isModalOpen={isModalOpen}
-        handleOpenModal={handleOpenModal}
-      />
     </HeaderContainer>
   );
 }

@@ -3,6 +3,7 @@ import styled from "styled-components";
 import IconButton from "../IconButton/IconButton";
 import logo from "../../assets/images/logo-light.webp";
 import { X } from "react-feather";
+import Sidebar from "../Sidebar/Sidebar";
 
 function ModalSideBar({ isModalOpen, handleOpenModal }) {
   if (!isModalOpen) {
@@ -12,14 +13,12 @@ function ModalSideBar({ isModalOpen, handleOpenModal }) {
   return (
     <Overlay>
       <Content>
-        <Header>
-          <IconButton type="picture">
-            <img src={logo} />
-          </IconButton>
+        <FloatIcon>
           <IconButton type="icon" onClick={handleOpenModal}>
-            <X />
+            <X/>
           </IconButton>
-        </Header>
+        </FloatIcon>
+          <Sidebar type="mobile"/>
       </Content>
     </Overlay>
   );
@@ -37,6 +36,7 @@ const Overlay = styled(DialogOverlay)`
 `;
 
 const Content = styled(DialogContent)`
+  position: relative;
   background: var(--color-background);
   width: 300px;
   display: flex;
@@ -48,5 +48,11 @@ const Header = styled.div`
   display: flex;
   justify-content: space-between;
 `;
+
+const FloatIcon = styled.div`
+  position: absolute;
+  top: 30px;
+  right: 16px; 
+`
 
 export default ModalSideBar;

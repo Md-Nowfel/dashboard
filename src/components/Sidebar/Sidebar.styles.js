@@ -4,14 +4,18 @@ export const SidebarContainer = styled.div`
   /* Add styles for Sidebar */
   padding: 1.5rem;
 
-  @media (max-width: ${(props) => props.theme.breakpoints.laptopLarge}) {
-    display: none;
-  }
+  ${(props) => props.type === "mobile" && `
+    padding: 0;
+    
+    `}
+ 
 `;
 
 export const NavLinkContainer = styled.div`
   /* Add styles for navigation links */
   padding: 1.5rem 0 1.5rem 0.5rem;
+  
+
 `;
 
 export const NavLinkItem = styled.a`

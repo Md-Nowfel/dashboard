@@ -10,6 +10,13 @@ export const MainContent = styled.main`
 overflow-y: auto; /* Make content scrollable if it overflows */
 `;
 
+export const LargeScreenSidebar = styled.div`
+  @media (max-width: ${(props) => props.theme.breakpoints.laptopLarge}) {
+    display: none;
+  }
+`
+
+
 export const StyledContent = styled.div`
   padding: 1.5rem;
   width: 100%;
